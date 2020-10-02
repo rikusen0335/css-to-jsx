@@ -38,7 +38,6 @@ export function Translation() {
       <pre contenteditable className="item">
         <code className="language-javascript">
           <div
-            ref={textAreaRef}
             className="code-preview"
             dangerouslySetInnerHTML={{ __html: js }}
           ></div>
