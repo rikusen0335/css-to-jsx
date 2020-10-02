@@ -6,8 +6,6 @@ import postcssJs from "postcss-js";
 
 export function Translation() {
   const [js, setJs] = useState("");
-  const [copySuccess, setCopySuccess] = useState("");
-  const textAreaRef = useRef(null);
 
   const handleChange = (e) => {
     const css = e.target.value;
@@ -31,13 +29,6 @@ export function Translation() {
     setJs(highlight);
   };
 
-  function copyToClipboard(e) {
-    textAreaRef.current.select();
-    document.execCommand("copy");
-    e.target.focus();
-    setCopySuccess("Copied!");
-  }
-
   return (
     <div className="container">
       <div className="item">
@@ -45,8 +36,6 @@ export function Translation() {
       </div>
 
       <pre contenteditable className="item">
-        <button onClick={copyToClipboard}>Copy</button>
-        {copySuccess}
         <code className="language-javascript">
           <div
             ref={textAreaRef}
